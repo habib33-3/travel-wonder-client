@@ -13,21 +13,18 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 
-const Register = () => {
+const Login = () => {
   const [visible, setVisible] = useState(false);
-  const [name, setName] = useState("");
-  const [pic, setPic] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleRegister = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    console.log(name, pic, email, password);
   };
 
   return (
     <div>
-      <PageTitle title={"Register Now"} />
+      <PageTitle title={"Login Now"} />
       <Container
         component="main"
         maxWidth="xs"
@@ -45,40 +42,12 @@ const Register = () => {
             component="form"
             noValidate
             sx={{ mt: 3 }}
-            onSubmit={handleRegister}
+            onSubmit={handleLogin}
           >
             <Grid
               container
               spacing={2}
             >
-              <Grid
-                item
-                xs={12}
-              >
-                <TextField
-                  autoComplete="given-name"
-                  name="name"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="Full Name"
-                  autoFocus
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-              >
-                <TextField
-                  required
-                  fullWidth
-                  id="pic"
-                  label="Picture"
-                  name="pic"
-                  onChange={(e) => setPic(e.target.value)}
-                />
-              </Grid>
               <Grid
                 item
                 xs={12}
@@ -131,7 +100,7 @@ const Register = () => {
                 mt: 3,
                 mb: 2,
                 ":active": {
-                  transform: "scale(0.95)",
+                  transform: "scale(.95)",
                 },
               }}
             >
@@ -144,8 +113,8 @@ const Register = () => {
             >
               <Grid item>
                 <Typography variant="body2">
-                  Already have an account?{" "}
-                  <RouterLink to="/login">sign in</RouterLink>
+                  Don{"'"}t have an account?{" "}
+                  <RouterLink to="/login">sign up</RouterLink>
                 </Typography>
               </Grid>
             </Grid>
@@ -156,4 +125,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
