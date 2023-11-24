@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import { Home } from "../pages";
 import { Navbar } from "../shared";
 
 const Root = () => {
@@ -7,7 +6,6 @@ const Root = () => {
     <div>
       <Navbar />
       <Outlet />
-      <Home />
     </div>
   );
 };
