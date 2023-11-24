@@ -12,14 +12,27 @@ import { Link as RouterLink } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
+import useAuth from "../../hooks/useAuth/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { logIn } = useAuth();
+
   const handleLogin = (e) => {
     e.preventDefault();
+
+    logIn(email, password)
+      .then((res) => {
+        console.log(res.user);
+        toast.success("You are logged in");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
   };
 
   return (
@@ -104,7 +117,7 @@ const Login = () => {
                 },
               }}
             >
-              Sign Up
+              Sign In
             </Button>
 
             <Grid
