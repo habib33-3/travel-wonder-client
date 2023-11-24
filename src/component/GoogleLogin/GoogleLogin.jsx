@@ -1,0 +1,47 @@
+import { Box, Button, Typography } from "@mui/material";
+import GoogleIcon from "@mui/icons-material/Google";
+import useAuth from "../../hooks/useAuth/useAuth";
+import toast from "react-hot-toast";
+
+const GoogleLogin = () => {
+  const { googleLogin } = useAuth();
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((res) => {
+        console.log(res.user);
+        toast.success("Congrats, you are logged in");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
+
+  return (
+    <Box
+      textAlign={"center"}
+      sx={{ my: "24px" }}
+    >
+      <Typography textAlign={"center"}>or, Continue with</Typography>
+      <Button
+        variant="contained"
+        color="success"
+        sx={{
+          color: "white",
+          py: "16px",
+          fontWeight: 800,
+          ":active": {
+            transform: "scale(0.95)",
+          },
+        }}
+        fullWidth
+        startIcon={<GoogleIcon />}
+        onClick={handleGoogleLogin}
+      >
+        Google
+      </Button>
+    </Box>
+  );
+};
+
+export default GoogleLogin;

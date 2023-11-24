@@ -14,6 +14,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
+import { GoogleLogin } from "../../component";
 
 const Register = () => {
   const [visible, setVisible] = useState(false);
@@ -166,6 +167,9 @@ const Register = () => {
                 </Typography>
               </Grid>
             </Grid>
+            <Box>
+              <GoogleLogin />
+            </Box>
           </Box>
         </Box>
       </Container>
