@@ -12,6 +12,8 @@ import { Link as RouterLink } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
+import useAuth from "../../hooks/useAuth/useAuth";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [visible, setVisible] = useState(false);
@@ -20,9 +22,24 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { createUser, updateUserProfile } = useAuth();
+
   const handleRegister = (e) => {
     e.preventDefault();
     console.log(name, pic, email, password);
+
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+        updateUserProfile(name, pic)
+          .then(() => {})
+          .catch((err) => toast.error(err.message));
+        toast.success("Congratulation, you are registered");
+      })
+      .catch((err) => {
+        console.error(err.message);
+        toast.error(err.message);
+      });
   };
 
   return (

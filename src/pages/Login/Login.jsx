@@ -112,9 +112,12 @@ const Login = () => {
               justifyContent="flex-end"
             >
               <Grid item>
-                <Typography variant="body2">
+                <Typography
+                  align="center"
+                  variant="body2"
+                >
                   Don{"'"}t have an account?{" "}
-                  <RouterLink to="/login">sign up</RouterLink>
+                  <RouterLink to="/register">sign up</RouterLink>
                 </Typography>
               </Grid>
             </Grid>
