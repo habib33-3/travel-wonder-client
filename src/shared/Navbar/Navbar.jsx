@@ -15,19 +15,19 @@ import { useState } from "react";
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, NavLink } from "react-router-dom";
-
-// const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import { useAuth } from "../../hooks";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const { user } = useAuth();
+
+  const handleOpenNavMenu = (e) => {
+    setAnchorElNav(e.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
+  const handleOpenUserMenu = (e) => {
+    setAnchorElUser(e.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
         onClick={handleCloseNavMenu}
         sx={{ my: 2, color: "white", display: "block" }}
         variant="contained"
-        color="secondary"
+        color="info"
       >
         Home
       </Button>
@@ -56,7 +56,7 @@ const Navbar = () => {
         onClick={handleCloseNavMenu}
         sx={{ my: 2, color: "white", display: "block" }}
         variant="contained"
-        color="secondary"
+        color="info"
       >
         Community
       </Button>
@@ -66,7 +66,7 @@ const Navbar = () => {
         onClick={handleCloseNavMenu}
         sx={{ my: 2, color: "white", display: "block" }}
         variant="contained"
-        color="secondary"
+        color="info"
       >
         Blogs
       </Button>
@@ -76,7 +76,7 @@ const Navbar = () => {
         onClick={handleCloseNavMenu}
         sx={{ my: 2, color: "white", display: "block" }}
         variant="contained"
-        color="secondary"
+        color="info"
       >
         About Us
       </Button>
@@ -86,7 +86,7 @@ const Navbar = () => {
         onClick={handleCloseNavMenu}
         sx={{ my: 2, color: "white", display: "block" }}
         variant="contained"
-        color="secondary"
+        color="info"
       >
         Contact Us
       </Button>
@@ -215,51 +215,67 @@ const Navbar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton
-                onClick={handleOpenUserMenu}
-                // sx={{ p: 0 }}
+            {user?.email ? (
+              <>
+                <Tooltip title="Open User settings">
+                  <IconButton
+                    onClick={handleOpenUserMenu}
+                    sx={{ p: 0 }}
+                  >
+                    <Avatar
+                      alt={user.displayName}
+                      src={user.photoURL}
+                    />
+                  </IconButton>
+                </Tooltip>
+                <Menu
+                  sx={{ mt: "45px" }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
+                >
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Button
+                      LinkComponent={Link}
+                      to="/dashboard"
+                      textAlign="center"
+                      variant="contained"
+                    >
+                      Dashboard
+                    </Button>
+                  </MenuItem>
+                  <MenuItem>
+                    <Typography textAlign="center">
+                      Name: {user.displayName}
+                    </Typography>
+                  </MenuItem>
+                  <MenuItem>
+                    <Typography textAlign="center">
+                      Email: {user.email}
+                    </Typography>
+                  </MenuItem>
+                </Menu>
+              </>
+            ) : (
+              <Button
+                LinkComponent={Link}
+                to="/login"
+                variant="contained"
+                color="info"
               >
-                {/* TODO : add conditional rendaring */}
-                {/* <Avatar
-                  alt=" Sharp"
-                  src="/static/images/avatar/2.jpg"
-                /> */}
-                <Button
-                  LinkComponent={Link}
-                  to="/login"
-                  variant="contained"
-                  color="info"
-                >
-                  Login
-                </Button>
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem
-                  key={setting}
-                  onClick={handleCloseUserMenu}
-                >
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+                Login
+              </Button>
+            )}
           </Box>
         </Toolbar>
       </Container>
