@@ -12,9 +12,9 @@ import { Link as RouterLink } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
-import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
 import { GoogleLogin } from "../../component";
+import { useAuth } from "../../hooks";
 
 const Login = () => {
   const [visible, setVisible] = useState(false);
