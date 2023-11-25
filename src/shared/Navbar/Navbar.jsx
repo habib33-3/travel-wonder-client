@@ -16,12 +16,14 @@ import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../hooks";
+import { Logout } from "@mui/icons-material";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
 
   const handleOpenNavMenu = (e) => {
     setAnchorElNav(e.currentTarget);
@@ -36,6 +38,12 @@ const Navbar = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const handleLogOut = () => {
+    logOut().then(() => {
+      toast.success("You are logged out");
+    });
   };
 
   const navPages = (
@@ -263,6 +271,17 @@ const Navbar = () => {
                     <Typography textAlign="center">
                       Email: {user.email}
                     </Typography>
+                  </MenuItem>
+                  <MenuItem>
+                    <Button
+                      startIcon={<Logout />}
+                      textAlign="center"
+                      onClick={handleLogOut}
+                      variant="contained"
+                      color="error"
+                    >
+                      Logout
+                    </Button>
                   </MenuItem>
                 </Menu>
               </>

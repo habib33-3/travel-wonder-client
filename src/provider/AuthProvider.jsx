@@ -7,6 +7,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../config/firebase.config";
@@ -65,7 +66,12 @@ const AuthProvider = ({ children }) => {
     return () => {
       return unsubscribe();
     };
-  }, []);
+  }, [axiosPublic]);
+
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
 
   const authInfo = {
     loading,
@@ -74,6 +80,7 @@ const AuthProvider = ({ children }) => {
     logIn,
     updateUserProfile,
     googleLogin,
+    logOut,
   };
 
   return (
