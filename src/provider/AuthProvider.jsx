@@ -44,19 +44,21 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("CurrentUser-->", currentUser);
-      setLoading(false);
+      console.log("User ", currentUser);
+
       const userInfo = {
-        email: currentUser.email,
+        email: currentUser?.email,
       };
 
       if (currentUser) {
         axiosPublic.post("/auth/createToken", userInfo).then((res) => {
           console.log(res.data);
+          setLoading(false);
         });
       } else {
-        axiosPublic.post("/logOut", userInfo).then((res) => {
+        axiosPublic.post("/auth/logOut", userInfo).then((res) => {
           console.log(res.data);
+          setLoading(false);
         });
       }
     });

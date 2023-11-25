@@ -2,14 +2,17 @@ import { Box, Button, Typography } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
+import { useAxiosPublic } from "../../hooks";
 
 const GoogleLogin = () => {
   const { googleLogin } = useAuth();
+  const axiosPublic=useAxiosPublic() 
 
   const handleGoogleLogin = () => {
     googleLogin()
       .then((res) => {
         console.log(res.user);
+        axiosPublic.post("/user/saveUser", res?.user)
         toast.success("Congrats, you are logged in");
       })
       .catch((err) => {

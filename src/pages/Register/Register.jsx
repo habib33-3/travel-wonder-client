@@ -14,7 +14,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { GoogleLogin } from "../../component";
-import { useAuth } from "../../hooks";
+import { useAuth, useAxiosPublic } from "../../hooks";
 
 const Register = () => {
   const [visible, setVisible] = useState(false);
@@ -24,6 +24,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
   const { createUser, updateUserProfile } = useAuth();
+  const axiosPublic = useAxiosPublic();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -35,7 +36,12 @@ const Register = () => {
         updateUserProfile(name, pic)
           .then(() => {})
           .catch((err) => toast.error(err.message));
-        toast.success("Congratulation, you are registered");
+
+        axiosPublic.post("/user/saveUser", res?.user).then((res) => {
+          console.log(res.data);
+
+          toast.success("Congratulation, you are registered");
+        });
       })
       .catch((err) => {
         console.error(err.message);
