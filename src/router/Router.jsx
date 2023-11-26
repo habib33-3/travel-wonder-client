@@ -3,6 +3,8 @@ import Root from "../layout/Root";
 import { ErrorPage, Home, Login, Register } from "../pages";
 import Dashboard from "../layout/Dashboard/Dashboard";
 import PrivateRouter from "./PrivateRouter";
+import AdminRouter from "./AdminRouter";
+import { ManageUsers } from "../pages/Dashboard/AdminPages";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,18 @@ const router = createBrowserRouter([
         <Dashboard />
       </PrivateRouter>
     ),
+    children: [
+      // admin routes
+
+      {
+        path: "manageUsers",
+        element: (
+          <AdminRouter>
+            <ManageUsers />
+          </AdminRouter>
+        ),
+      },
+    ],
   },
 ]);
 

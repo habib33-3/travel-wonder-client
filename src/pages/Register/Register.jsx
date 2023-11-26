@@ -7,7 +7,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { PageTitle } from "../../shared";
 import { Link as RouterLink } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -15,6 +14,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { GoogleLogin } from "../../component";
 import { useAuth, useAxiosPublic } from "../../hooks";
+import { PageTitle } from "../../shared";
 
 const Register = () => {
   const [visible, setVisible] = useState(false);
