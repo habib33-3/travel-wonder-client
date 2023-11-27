@@ -4,7 +4,7 @@ import { ErrorPage, Home, Login, Register } from "../pages";
 import Dashboard from "../layout/Dashboard/Dashboard";
 import PrivateRouter from "./PrivateRouter";
 import AdminRouter from "./AdminRouter";
-import { ManageUsers } from "../pages/Dashboard/AdminPages";
+import { AddPackage, ManageUsers } from "../pages/Dashboard/AdminPages";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +43,15 @@ const router = createBrowserRouter([
         element: (
           <AdminRouter>
             <ManageUsers />
+          </AdminRouter>
+        ),
+      },
+
+      {
+        path: "addPackage",
+        element: (
+          <AdminRouter>
+            <AddPackage />
           </AdminRouter>
         ),
       },

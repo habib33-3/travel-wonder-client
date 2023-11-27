@@ -1,17 +1,16 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
 import { PageTitle } from "../../../../shared";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { useCategories } from "../../../../hooks";
+import { Loader } from "../../../../component";
 
 const TourType = () => {
-  const [categories, setCategories] = useState([]);
+  const { categories, isLoading } = useCategories();
 
-  useEffect(() => {
-    fetch("/categories.json")
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
-  }, []);
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <Box>
