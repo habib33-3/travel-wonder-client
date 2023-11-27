@@ -9,27 +9,27 @@ const Banner = () => {
   const slides = [
     {
       id: 1,
-      img: img1, // Assuming img1 represents a blue sea background
+      img: img1,
       title: "Seaside Serenity",
       text: "Where waves whisper tales of tranquility, and golden sands cradle moments of serenity",
-      headingColor: "#e67e22", // Orange color for readability on the sea
-      textColor: "#ffffff", // White text for better visibility on the blue sea
+      headingColor: "#e67e22",
+      textColor: "#ffffff",
     },
     {
       id: 2,
-      img: img2, // Assuming img2 represents a dark forest background
+      img: img2,
       title: "Mystical Mangroves",
       text: "In the heart of nature's maze, where whispers of the wild dance through the mystical mangroves",
-      headingColor: "#27ae60", // Green color for better visibility on the dark forest
-      textColor: "#ecf0f1", // Light grayish color for text on the dark forest
+      headingColor: "#27ae60",
+      textColor: "#ecf0f1",
     },
     {
       id: 3,
-      img: img3, // Assuming img3 represents a green hill background
+      img: img3,
       title: "Rolling Hills of Tranquility",
       text: "Amongst emerald fields and rolling hills, find solace in the soothing embrace of Sylhet's tea gardens",
-      headingColor: "#2ecc71", // Red color for readability on the green hill
-      textColor: "#ecf0f1", // Light grayish color for text on the green hill
+      headingColor: "#2ecc71",
+      textColor: "#ecf0f1",
     },
   ];
 
@@ -76,7 +76,6 @@ const Banner = () => {
                   position="relative"
                   sx={{ textAlign: "center", zIndex: 1 }}
                 >
-                  {/* Heading with dynamic gradient and color based on image */}
                   <Typography
                     variant="h4"
                     component="h3"
@@ -89,7 +88,6 @@ const Banner = () => {
                     {slide.title}
                   </Typography>
 
-                  {/* Subheading with dynamic gradient and color based on image */}
                   <Typography
                     variant="h6"
                     component="h4"

@@ -6,6 +6,7 @@ import {
   Grid,
   TextField,
   Typography,
+  styled,
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -15,6 +16,8 @@ import toast from "react-hot-toast";
 import { GoogleLogin } from "../../component";
 import { useAuth, useAxiosPublic } from "../../hooks";
 import { PageTitle } from "../../shared";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { uploadImg } from "../../util";
 
 const Register = () => {
   const [visible, setVisible] = useState(false);
@@ -28,7 +31,6 @@ const Register = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    console.log(name, pic, email, password);
 
     createUser(email, password)
       .then((res) => {
@@ -48,6 +50,35 @@ const Register = () => {
         toast.error(err.message);
       });
   };
+
+  // const VisuallyHiddenInput = styled("input")({
+  //   clip: "rect(0 0 0 0)",
+  //   clipPath: "inset(50%)",
+  //   height: 1,
+  //   overflow: "hidden",
+  //   position: "absolute",
+  //   bottom: 0,
+  //   left: 0,
+  //   whiteSpace: "nowrap",
+  //   width: 1,
+  // });
+
+  // const handleRegister = async (e) => {
+  //   e.preventDefault();
+
+  //   console.log(pic);
+
+  //   try {
+  //     const res = await axiosPublic.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY}`, pic, {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data",
+  //       },
+  //     });
+  //     console.log(res)
+  //   } catch (err) {
+  //     console.log(err.message);
+  //   }
+  // };
 
   return (
     <div>
@@ -102,6 +133,26 @@ const Register = () => {
                   name="pic"
                   onChange={(e) => setPic(e.target.value)}
                 />
+                {/* <Typography>Upload Your Picture</Typography>
+                <Button
+                  component="label"
+                  variant="contained"
+                  startIcon={<CloudUploadIcon />}
+                >
+                  Upload
+                  <VisuallyHiddenInput
+                    type="file"
+                    onChange={(e) => setPic(e.target.files[0])}
+                    accept="image/*"
+                  />
+                </Button> */}
+                {/* <input
+                  type="file"
+                
+                  id=""
+                  name="imgData"
+                  onChange={(e) => setPic(e.target.files[0])}
+                /> */}
               </Grid>
               <Grid
                 item

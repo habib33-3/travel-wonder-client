@@ -1,0 +1,44 @@
+[
+  {
+    "categoryId": "1",
+    "name": "Heritage Odyssey",
+    "img": "https://images.unsplash.com/photo-1604993497451-eed6eb271a9c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tagline": "Uncover the Past, Embrace the Legacy."
+  },
+  {
+    "categoryId": "2",
+    "name": "Riverine Adventure",
+    "img": "https://images.unsplash.com/photo-1645729058537-6a75dd194dd1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tagline": "Navigate Nature's Course, Embark on Riverine Romance."
+  },
+  {
+    "categoryId": "3",
+    "name": "Flavor Fiesta",
+    "img": "https://images.unsplash.com/photo-1610514000782-b205b70fbe71?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tagline": "Indulge in Culinary Delights, Flavorful Journey Awaits."
+  },
+  {
+    "categoryId": "4",
+    "name": "Green Escapade",
+    "img": "https://images.unsplash.com/photo-1672054280269-e8809178fd94?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tagline": "Discover the Beauty of Nature, Where Green Dreams Unfold."
+  },
+  {
+    "categoryId": "5",
+    "name": "Cultural Canvas",
+    "img": "https://media.gettyimages.com/id/1239994770/photo/bengali-new-year-celebration-in-bangladesh.jpg?s=1024x1024&w=gi&k=20&c=6yzqp51Id7A-UMr4sTWxon95l6VWbEn31GRYUXnfMw4=",
+    "tagline": "Immerse in Tradition, Unveil the Artistic Tapestry."
+  },
+  {
+    "categoryId": "6",
+    "name": "Wilderness Wander",
+    "img": "https://images.unsplash.com/photo-1607441078533-77ba814b1e5d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3VuZGFyYmFufGVufDB8fDB8fHww",
+    "tagline": "Explore the Untamed, Embrace the Wilderness."
+  },
+  {
+    "categoryId": "7",
+    "name": "Coastal Serenity",
+    "img": "https://images.unsplash.com/photo-1585993573411-b6eaed50db98?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a3Vha2F0YSUyQyUyMGJhbmdsYWRlc2h8ZW58MHx8MHx8fDA%3D",
+    "tagline": "Tranquil Moments by the Coast, Where Serenity Meets the Sea."
+  }
+]
