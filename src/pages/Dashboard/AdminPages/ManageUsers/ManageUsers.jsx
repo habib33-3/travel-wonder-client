@@ -11,24 +11,12 @@ import {
 } from "@mui/material";
 import { useAxiosSecure, useUsers } from "../../../../hooks";
 import { PageTitle } from "../../../../shared";
-import { useState } from "react";
 import { Loader } from "../../../../component";
 import toast from "react-hot-toast";
 
 const ManageUsers = () => {
   const { users, isLoading, refetch } = useUsers();
   const axiosSecure = useAxiosSecure();
-  //   const [page, setPage] = useState(0);
-  //   const [rowsPerPage, setRowsPerPage] = useState(10);
-
-  //   const handleChangePage = (event, newPage) => {
-  //     setPage(newPage);
-  //   };
-
-  //   const handleChangeRowsPerPage = (event) => {
-  //     setRowsPerPage(+event.target.value);
-  //     setPage(0);
-  //   };
 
   if (isLoading) {
     return <Loader />;

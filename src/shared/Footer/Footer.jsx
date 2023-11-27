@@ -14,6 +14,7 @@ import {
   ListItemText,
   Stack,
   Typography,
+  ListItemButton,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -28,7 +29,7 @@ const Footer = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        mt:"40px"
+        mt: "40px",
       }}
     >
       <Box>
@@ -47,34 +48,41 @@ const Footer = () => {
           display: "flex",
           justifyContent: "space-evenly",
           alignItems: "center",
-          width:4/5,
-          mx:"auto"
-          
+          width: 4 / 5,
+          mx: "auto",
         }}
       >
         <Box>
           <List>
-            <ListItem
-              LinkComponent={Link}
-              to="/register"
-            >
-              <ListItemText primary="Registration" />
+            <ListItem>
+              <ListItemButton
+                LinkComponent={Link}
+                to="/register"
+              >
+                <ListItemText primary="Registration" />
+              </ListItemButton>
             </ListItem>
-            <ListItem
-              LinkComponent={Link}
-              to="/login"
-            >
-              <ListItemText primary="Login" />
+
+            <ListItem>
+              <ListItemButton
+                LinkComponent={Link}
+                to="/login"
+              >
+                <ListItemText primary="Login" />
+              </ListItemButton>
             </ListItem>
-            <ListItem
-              components={Link}
-              to="/blogs"
-            >
-              <ListItemText primary="Blog" />
+            
+            <ListItem>
+              <ListItemButton
+                components={Link}
+                to="/blogs"
+              >
+                <ListItemText primary="Blog" />
+              </ListItemButton>
             </ListItem>
           </List>
         </Box>
-        <Box >
+        <Box>
           <List>
             <ListItem>
               <ListItemIcon>
