@@ -1,6 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
-import { AllPackages, ErrorPage, Home, Login, Register } from "../pages";
+import {
+  AllPackages,
+  ErrorPage,
+  Home,
+  Login,
+  PackageCategory,
+  Register,
+} from "../pages";
 import Dashboard from "../layout/Dashboard/Dashboard";
 import PrivateRouter from "./PrivateRouter";
 import AdminRouter from "./AdminRouter";
@@ -30,6 +37,11 @@ const router = createBrowserRouter([
       {
         path: "allPackages",
         element: <AllPackages />,
+      },
+
+      {
+        path: "packages/:categoryId",
+        element: <PackageCategory />,
       },
     ],
   },

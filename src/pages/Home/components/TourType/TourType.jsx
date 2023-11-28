@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useCategories } from "../../../../hooks";
 import { Loader } from "../../../../component";
+import { Link } from "react-router-dom";
 
 const TourType = () => {
   const { categories, isLoading } = useCategories();
@@ -60,6 +61,8 @@ const TourType = () => {
                   <Button
                     variant="contained"
                     color="info"
+                    LinkComponent={Link}
+                    to={`/packages/${category.categoryId}`}
                   >
                     View Packages
                   </Button>
