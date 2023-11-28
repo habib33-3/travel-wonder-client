@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { useAuth } from "../../../../hooks";
 import { PageTitle } from "../../../../shared";
 
-const AdminProfile = () => {
+const GuideProfile = () => {
   const { user } = useAuth();
 
   return (
@@ -20,7 +20,7 @@ const AdminProfile = () => {
           alt={user.displayName}
           width="120px"
           height="120px"
-          sx={{ borderRadius: "50%", p: 2, backgroundColor: "skyblue" }}
+          sx={{ borderRadius: "50%", p: 1, backgroundColor: "skyblue" }}
         />
         <Box>
           <Typography
@@ -28,7 +28,7 @@ const AdminProfile = () => {
             component="h3"
             sx={{ color: "blue" }}
           >
-            Role: Admin
+            Role: Guide
           </Typography>
         </Box>
       </Stack>
@@ -36,4 +36,4 @@ const AdminProfile = () => {
   );
 };
 
-export default AdminProfile;
+export default GuideProfile;

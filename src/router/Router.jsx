@@ -17,6 +17,8 @@ import {
   AdminProfile,
   ManageUsers,
 } from "../pages/Dashboard/AdminPages";
+import GuideRouter from "./GuideRouter";
+import { GuideProfile } from "../pages/Dashboard/GuidePages";
 
 const router = createBrowserRouter([
   {
@@ -82,13 +84,23 @@ const router = createBrowserRouter([
           </AdminRouter>
         ),
       },
-      
+
       {
         path: "adminProfile",
         element: (
           <AdminRouter>
             <AdminProfile />
           </AdminRouter>
+        ),
+      },
+
+      // guide router
+      {
+        path: "guideProfile",
+        element: (
+          <GuideRouter>
+            <GuideProfile />
+          </GuideRouter>
         ),
       },
     ],

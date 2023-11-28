@@ -14,16 +14,17 @@ import {
 } from "@mui/material";
 import { Link, Outlet } from "react-router-dom";
 import { Home } from "@mui/icons-material";
-import { AdminDrawer, UserDrawer } from "./Drawers";
-import { useAdmin, useAuth } from "../../hooks";
+import { AdminDrawer, GuideDrawer, UserDrawer } from "./Drawers";
+import { useAdmin, useAuth, useGuide } from "../../hooks";
 
 const Dashboard = () => {
   const drawerWidth = 240;
 
   const { user } = useAuth();
   const { isAdmin } = useAdmin();
+  const { isGuide } = useGuide();
 
-  console.log()
+  console.log();
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -62,7 +63,13 @@ const Dashboard = () => {
         <Toolbar />
         <Divider />
         {/* TODO: conditional drawer */}
-        {user && isAdmin ? <AdminDrawer /> : <UserDrawer />}
+        {user && isAdmin ? (
+          <AdminDrawer />
+        ) : isGuide ? (
+          <GuideDrawer />
+        ) : (
+          <UserDrawer />
+        )}
         <Divider />
         <List>
           <ListItem disablePadding>
