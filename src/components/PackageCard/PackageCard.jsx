@@ -43,8 +43,9 @@ const PackageCard = ({ tour }) => {
             aria-label="add to wishlist"
             sx={{ position: "absolute", right: "130px", bottom: 0 }}
             color="primary"
+            title="Add to Wishlist"
           >
-            <FavoriteIcon fontSize="24px" />
+            <FavoriteIcon  fontSize="24px" />
           </IconButton>
         </Box>
         <Typography
