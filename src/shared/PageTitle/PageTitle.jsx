@@ -14,6 +14,7 @@ const PageTitle = ({ title }) => {
         background: `-webkit-linear-gradient(45deg, #2980B9, #6E45E2)`,
         WebkitBackgroundClip: "text",
         color: "transparent",
+        textTransform:"uppercase"
       }}
     >
       {title}

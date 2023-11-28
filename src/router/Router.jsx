@@ -12,7 +12,11 @@ import {
 import Dashboard from "../layout/Dashboard/Dashboard";
 import PrivateRouter from "./PrivateRouter";
 import AdminRouter from "./AdminRouter";
-import { AddPackage, ManageUsers } from "../pages/Dashboard/AdminPages";
+import {
+  AddPackage,
+  AdminProfile,
+  ManageUsers,
+} from "../pages/Dashboard/AdminPages";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +79,15 @@ const router = createBrowserRouter([
         element: (
           <AdminRouter>
             <AddPackage />
+          </AdminRouter>
+        ),
+      },
+      
+      {
+        path: "adminProfile",
+        element: (
+          <AdminRouter>
+            <AdminProfile />
           </AdminRouter>
         ),
       },
