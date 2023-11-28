@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useAxiosSecure, useUsers } from "../../../../hooks";
 import { PageTitle } from "../../../../shared";
-import { Loader } from "../../../../component";
+import { Loader } from "../../../../components";
 import toast from "react-hot-toast";
 
 const ManageUsers = () => {

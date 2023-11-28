@@ -3,7 +3,7 @@ import { PageTitle } from "../../../../shared";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useCategories } from "../../../../hooks";
-import { Loader } from "../../../../component";
+import { Loader } from "../../../../components";
 import { Link } from "react-router-dom";
 
 const TourType = () => {

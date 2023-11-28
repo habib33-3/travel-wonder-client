@@ -6,6 +6,7 @@ import {
   Home,
   Login,
   PackageCategory,
+  PackageDetails,
   Register,
 } from "../pages";
 import Dashboard from "../layout/Dashboard/Dashboard";
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
       {
         path: "packages/:categoryId",
         element: <PackageCategory />,
+      },
+
+      {
+        path: "package/:id",
+        element: <PackageDetails />,
       },
     ],
   },

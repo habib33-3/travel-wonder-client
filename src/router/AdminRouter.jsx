@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useAdmin, useAuth } from "../hooks";
-import { Loader } from "../component";
+import { Loader } from "../components";
 import { Navigate } from "react-router-dom";
 
 const AdminRouter = ({ children }) => {

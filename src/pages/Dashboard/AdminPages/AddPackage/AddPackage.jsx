@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { PageTitle } from "../../../../shared";
 import { useAxiosSecure, useCategories } from "../../../../hooks";
-import { Loader } from "../../../../component";
+import { Loader } from "../../../../components";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -24,6 +24,7 @@ const AddPackage = () => {
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
   const [thumbnail, setThumbnail] = useState("");
+  const [description, setDescription] = useState("");
   const [img1, setImg1] = useState("");
   const [img2, setImg2] = useState("");
   const [img3, setImg3] = useState("");
@@ -49,6 +50,7 @@ const AddPackage = () => {
       thumbnail,
       category,
       categoryId,
+      description,
       images: [img1, img2, img3, img4, img5],
       price: parseFloat(price),
       activities: [day1, day2, day3],
@@ -136,6 +138,20 @@ const AddPackage = () => {
                   label="Tour Thumbnail"
                   name="thumbnail"
                   onChange={(e) => setThumbnail(e.target.value)}
+                />
+              </Grid>
+              <Grid
+                item
+                xs={12}
+              >
+                <TextField
+                  required
+                  fullWidth
+                  id="description"
+                  label="Tour Description"
+                  name="description"
+                  multiline
+                  onChange={(e) => setDescription(e.target.value)}
                 />
               </Grid>
               <Grid

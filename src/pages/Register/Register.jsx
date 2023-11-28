@@ -13,7 +13,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { GoogleLogin } from "../../component";
+import { GoogleLogin } from "../../components";
 import { useAuth, useAxiosPublic } from "../../hooks";
 import { PageTitle } from "../../shared";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";

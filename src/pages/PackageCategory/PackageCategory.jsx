@@ -2,7 +2,7 @@ import { Box, Container, CssBaseline, Grid } from "@mui/material";
 import PageTitle from "../../shared/PageTitle/PageTitle";
 import { useParams } from "react-router-dom";
 import { useCategories, useTours } from "../../hooks";
-import { Loader, PackageCard } from "../../component";
+import { Loader, PackageCard } from "../../components";
 
 const PackageCategory = () => {
   const { categoryId } = useParams();

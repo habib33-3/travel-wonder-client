@@ -7,10 +7,11 @@ import {
   Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { Link } from "react-router-dom";
 
 const PackageCard = ({ tour }) => {
-  const { thumbnail, name, category, price } = tour;
+  const { _id, thumbnail, name, category, price } = tour;
 
   return (
     <Grid item>
@@ -31,7 +32,7 @@ const PackageCard = ({ tour }) => {
           },
         }}
       >
-        <Box sx={{ position: "relative",display:"flex" }}>
+        <Box sx={{ position: "relative", display: "flex" }}>
           <Box
             component={"img"}
             width={4 / 5}
@@ -40,10 +41,10 @@ const PackageCard = ({ tour }) => {
           />
           <IconButton
             aria-label="add to wishlist"
-            sx={{ position: "absolute",right:"130px",bottom:0 }}
+            sx={{ position: "absolute", right: "130px", bottom: 0 }}
             color="primary"
           >
-            <FavoriteIcon fontSize="24px"/>
+            <FavoriteIcon fontSize="24px" />
           </IconButton>
         </Box>
         <Typography
@@ -74,6 +75,8 @@ const PackageCard = ({ tour }) => {
         >
           <Button
             variant="contained"
+            LinkComponent={Link}
+            to={`/package/${_id}`}
             sx={{
               backgroundColor: "red",
               color: "white",
