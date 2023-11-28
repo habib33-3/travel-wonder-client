@@ -28,6 +28,7 @@
     "react-social-login-buttons": "^3.9.1",
     "react-spinners": "^0.13.8",
     "react-tabs": "^6.0.2",
+    "react-vertical-timeline-component": "^3.6.0",
     "swiper": "^11.0.5"
   },
   "devDependencies": {

@@ -1,18 +1,14 @@
 import {
-  Box,
-  Container,
-  Grid,
-  ImageList,
-  ImageListItem,
-  Paper,
-  Typography,
-} from "@mui/material";
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import { Box, Container, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import PhotoAlbum from "react-photo-album";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 
 const Details = ({ tour }) => {
-  const { thumbnail, images, category, price } = tour;
+  const { images, category, price, activities } = tour;
 
   const photos = [
     {
@@ -77,6 +73,29 @@ const Details = ({ tour }) => {
           >
             Price: {price} per person
           </Typography>
+        </Box>
+        <Box>
+          <Typography textAlign={"center"}>Activities</Typography>
+          <VerticalTimeline>
+            {activities.map((activity, idx) => (
+              <VerticalTimelineElement
+                key={activity}
+                date={`Day ${idx + 1}`}
+                className="vertical-timeline-element--work"
+                contentStyle={{
+                  background: "#f8f8f8",
+                  color: "#333333",
+                }}
+                contentArrowStyle={{
+                  borderRight: "7px solid  rgb(33, 150, 243)",
+                }}
+                iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+                icon={<CalendarTodayIcon />}
+              >
+                {activity}
+              </VerticalTimelineElement>
+            ))}
+          </VerticalTimeline>
         </Box>
       </Box>
     </Container>

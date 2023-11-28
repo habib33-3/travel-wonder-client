@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "react-vertical-timeline-component/style.min.css";
 
 const queryClient = new QueryClient();
 
