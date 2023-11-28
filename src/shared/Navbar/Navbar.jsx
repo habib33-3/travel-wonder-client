@@ -256,7 +256,6 @@ const Navbar = () => {
                     <Button
                       LinkComponent={Link}
                       to="/dashboard"
-                      textAlign="center"
                       variant="contained"
                     >
                       Dashboard
@@ -275,7 +274,6 @@ const Navbar = () => {
                   <MenuItem>
                     <Button
                       startIcon={<Logout />}
-                      textAlign="center"
                       onClick={handleLogOut}
                       variant="contained"
                       color="error"

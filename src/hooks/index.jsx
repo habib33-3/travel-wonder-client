@@ -4,6 +4,7 @@ import useAdmin from "./useAdmin/useAdmin";
 import useAxiosSecure from "./useAxiosSecure/useAxiosSecure";
 import useUsers from "./UseUsers/useUsers";
 import useCategories from "./useCategories/useCategories";
+import useTours from "./useTours/useTours";
 
 export {
   useAxiosPublic,
@@ -12,4 +13,5 @@ export {
   useAxiosSecure,
   useUsers,
   useCategories,
+  useTours,
 };
