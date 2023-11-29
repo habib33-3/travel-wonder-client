@@ -20,6 +20,7 @@
     "lottie-react": "^2.4.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-datepicker": "^4.23.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-photo-album": "^2.3.0",
@@ -30,6 +31,7 @@
     "react-spinners": "^0.13.8",
     "react-tabs": "^6.0.2",
     "react-vertical-timeline-component": "^3.6.0",
+    "sweetalert2": "^11.10.1",
     "swiper": "^11.0.5"
   },
   "devDependencies": {
