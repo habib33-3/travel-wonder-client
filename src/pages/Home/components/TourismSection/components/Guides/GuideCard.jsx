@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const GuideCard = ({ guide }) => {
   const { name, pic, _id } = guide;
@@ -32,6 +33,8 @@ const GuideCard = ({ guide }) => {
 
         <Button
           variant="contained"
+          LinkComponent={Link}
+          to={`/guide/${_id}`}
           color="info"
           sx={{
             ":active": {

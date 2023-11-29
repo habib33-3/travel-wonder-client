@@ -55,8 +55,6 @@ const UpdateForm = () => {
 
     const language = languageValue.map((language) => language.value);
 
-    const eduction = educationValue.map((education) => education.value);
-
     const guideInfo = {
       name: user.displayName,
       email: user.email,
@@ -64,9 +62,8 @@ const UpdateForm = () => {
       skill,
       language,
       phone,
-      eduction,
+      education: educationValue.value,
       experience,
-      updated: "true",
     };
 
     console.log(guideInfo);

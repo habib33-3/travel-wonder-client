@@ -12,7 +12,7 @@ const useGuideData = () => {
     queryKey: ["guides"],
     queryFn: async () => {
       const res = await axiosPublic.get("/guides/getAllGuide");
-      console.log(res);
+
       return res.data;
     },
   });

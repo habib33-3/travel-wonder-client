@@ -3,6 +3,7 @@ import Root from "../layout/Root";
 import {
   AllPackages,
   ErrorPage,
+  GuideDetails,
   Home,
   Login,
   PackageCategory,
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
       {
         path: "package/:id",
         element: <PackageDetails />,
+      },
+
+      {
+        path: "guide/:id",
+        element: <GuideDetails />,
       },
     ],
   },

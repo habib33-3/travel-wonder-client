@@ -5,6 +5,7 @@ import ErrorPage from "./Error/ErrorPage";
 import AllPackages from "./AllPackages/AllPackages";
 import PackageCategory from "./PackageCategory/PackageCategory";
 import PackageDetails from "./PackageDetails/PackageDetails";
+import GuideDetails from "./GuideDetails/GuideDetails";
 
 export {
   Home,
@@ -14,4 +15,5 @@ export {
   AllPackages,
   PackageCategory,
   PackageDetails,
+  GuideDetails,
 };
