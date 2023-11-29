@@ -3,6 +3,7 @@ import { useGuideData } from "../../hooks";
 import { useParams } from "react-router-dom";
 import { PageTitle } from "../../shared";
 import { Loader } from "../../components";
+import ReviewForm from "./ReviewForm/ReviewForm";
 
 const GuideDetails = () => {
   const { id } = useParams();
@@ -88,6 +89,7 @@ const GuideDetails = () => {
             </Box>
           </Box>
         </Stack>
+        <ReviewForm guideEmail={email}/>
       </Container>
     </Box>
   );
