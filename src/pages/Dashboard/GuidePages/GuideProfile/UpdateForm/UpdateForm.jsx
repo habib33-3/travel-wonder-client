@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Checkbox,
   Container,
   CssBaseline,
   Grid,
@@ -18,12 +17,14 @@ const animatedComponents = makeAnimated();
 
 const UpdateForm = () => {
   const { user } = useAuth();
+
   const axiosSecure = useAxiosSecure();
 
   const [skillValue, setSkillValue] = useState("");
   const [languageValue, setLanguageValue] = useState("");
   const [phone, setPhone] = useState(0);
   const [experience, setExperience] = useState(0);
+  const [educationValue, setEducationValue] = useState("");
 
   const skills = [
     { value: "Swimming", label: "Swimming" },
@@ -41,12 +42,20 @@ const UpdateForm = () => {
     { value: "French", label: "French" },
   ];
 
+  const educations = [
+    { value: "S.S.C", label: "S.S.C" },
+    { value: "H.S.C", label: "H.S.C" },
+    { value: "Bachelors", label: "Bachelors" },
+  ];
+
   const handleUpdateInfo = (e) => {
     e.preventDefault();
 
     const skill = skillValue.map((skill) => skill.value);
 
     const language = languageValue.map((language) => language.value);
+
+    const eduction = educationValue.map((education) => education.value);
 
     const guideInfo = {
       name: user.displayName,
@@ -55,7 +64,9 @@ const UpdateForm = () => {
       skill,
       language,
       phone,
+      eduction,
       experience,
+      updated: "true",
     };
 
     console.log(guideInfo);
@@ -153,6 +164,21 @@ const UpdateForm = () => {
                   type="number"
                   id="phone"
                   onChange={(e) => setPhone(e.target.value)}
+                />
+              </Grid>
+              <Grid
+                item
+                xs={12}
+              >
+                <Typography>Education</Typography>
+                <Select
+                  closeMenuOnSelect={false}
+                  components={animatedComponents}
+                  // isMulti
+                  options={educations}
+                  onChange={(selectedOptions) =>
+                    setEducationValue(selectedOptions)
+                  }
                 />
               </Grid>
               <Grid
