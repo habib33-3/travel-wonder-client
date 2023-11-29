@@ -20,7 +20,7 @@ import {
 } from "../pages/Dashboard/AdminPages";
 import GuideRouter from "./GuideRouter";
 import { GuideProfile, ManageBooking } from "../pages/Dashboard/GuidePages";
-import { UserBookings } from "../pages/Dashboard/UserPages";
+import { UserBookings, UserWishlist } from "../pages/Dashboard/UserPages";
 
 const router = createBrowserRouter([
   {
@@ -124,6 +124,11 @@ const router = createBrowserRouter([
       {
         path: "usersBookings",
         element: <UserBookings />,
+      },
+
+      {
+        path: "usersWishList",
+        element: <UserWishlist />,
       },
     ],
   },
