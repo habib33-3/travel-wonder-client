@@ -8,7 +8,7 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigation } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
@@ -29,6 +29,8 @@ const Register = () => {
   const { createUser, updateUserProfile } = useAuth();
   const axiosPublic = useAxiosPublic();
 
+  const navigate = useNavigation();
+
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -41,7 +43,7 @@ const Register = () => {
 
         axiosPublic.post("/user/saveUser", res?.user).then((res) => {
           console.log(res.data);
-
+          navigate("/");
           toast.success("Congratulation, you are registered");
         });
       })

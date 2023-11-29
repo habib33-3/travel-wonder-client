@@ -3,7 +3,7 @@ import { useTours } from "../../hooks";
 import { useParams } from "react-router-dom";
 import { PageTitle } from "../../shared";
 import { Loader } from "../../components";
-import { Details } from "./components";
+import { AvailableGuides, Details } from "./components";
 
 const PackageDetails = () => {
   const { id } = useParams();
@@ -19,6 +19,7 @@ const PackageDetails = () => {
     <Box>
       <PageTitle title={tour.name} />
       <Details tour={tour} />
+      <AvailableGuides />
     </Box>
   );
 };

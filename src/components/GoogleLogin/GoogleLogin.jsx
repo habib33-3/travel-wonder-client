@@ -3,17 +3,22 @@ import GoogleIcon from "@mui/icons-material/Google";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
 import { useAxiosPublic } from "../../hooks";
+import { useNavigate } from "react-router-dom";
 
 const GoogleLogin = () => {
   const { googleLogin } = useAuth();
-  const axiosPublic=useAxiosPublic() 
+  const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
 
   const handleGoogleLogin = () => {
     googleLogin()
       .then((res) => {
         console.log(res.user);
-        axiosPublic.post("/user/saveUser", res?.user)
-        toast.success("Congrats, you are logged in");
+        axiosPublic.post("/user/saveUser", res?.user).then((res) => {
+          console.log(res.data);
+          navigate("/");
+          toast.success("Congrats, you are logged in");
+        });
       })
       .catch((err) => {
         toast.error(err.message);

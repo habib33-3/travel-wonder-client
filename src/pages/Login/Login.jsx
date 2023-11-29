@@ -7,8 +7,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
@@ -24,6 +23,8 @@ const Login = () => {
 
   const { logIn } = useAuth();
 
+  const navigate=useNavigate()
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -31,6 +32,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         toast.success("You are logged in");
+        navigate("/")
       })
       .catch((err) => {
         toast.error(err.message);

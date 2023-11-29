@@ -10,8 +10,6 @@ const Guides = () => {
     return <Loader />;
   }
 
-  console.log(guides);
-
   return (
     <Box>
       <Typography
