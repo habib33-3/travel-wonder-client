@@ -19,7 +19,7 @@ import {
   ManageUsers,
 } from "../pages/Dashboard/AdminPages";
 import GuideRouter from "./GuideRouter";
-import { GuideProfile } from "../pages/Dashboard/GuidePages";
+import { GuideProfile, ManageBooking } from "../pages/Dashboard/GuidePages";
 
 const router = createBrowserRouter([
   {
@@ -106,6 +106,15 @@ const router = createBrowserRouter([
         element: (
           <GuideRouter>
             <GuideProfile />
+          </GuideRouter>
+        ),
+      },
+
+      {
+        path: "myTours",
+        element: (
+          <GuideRouter>
+            <ManageBooking />
           </GuideRouter>
         ),
       },

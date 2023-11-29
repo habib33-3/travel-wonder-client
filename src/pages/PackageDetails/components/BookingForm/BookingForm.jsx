@@ -16,28 +16,13 @@ import {
 import { useAuth, useAxiosSecure, useGuideData } from "../../../../hooks";
 import DatePicker from "react-datepicker";
 import { useState } from "react";
-import { Link, useNavigation } from "react-router-dom";
-import Swal from "sweetalert2";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { Link } from "react-router-dom";
 
 const BookingForm = ({ tour }) => {
   const { user } = useAuth();
   const { guides } = useGuideData();
 
   const axiosSecure = useAxiosSecure();
-
-  const navigate = useNavigation();
 
   const [startDate, setStartDate] = useState(new Date());
   const [guideEmail, setGuideEmail] = useState("");
@@ -55,7 +40,8 @@ const BookingForm = ({ tour }) => {
       touristEmail: user.email,
       touristPic: user.photoURL,
       price: tour.price,
-      startDate,
+      tourName: tour.name,
+      tourDate: new Date(startDate).toISOString().split("T")[0],
       guideEmail,
       status: "in review",
     };
@@ -104,7 +90,7 @@ const BookingForm = ({ tour }) => {
               id="userEmail"
               label="Your Email"
               name="userEmail"
-              defaultValue={user.email}
+              defaultValue={user?.email}
               disabled
               autoFocus
             />
@@ -115,7 +101,7 @@ const BookingForm = ({ tour }) => {
               id="userName"
               label="Your name"
               name="userName"
-              defaultValue={user.displayName}
+              defaultValue={user?.displayName}
               disabled
               autoFocus
             />
@@ -126,7 +112,7 @@ const BookingForm = ({ tour }) => {
               id="userImg"
               label="Your Photo"
               name="userImg"
-              defaultValue={user.photoURL}
+              defaultValue={user?.photoURL}
               disabled
               autoFocus
             />
@@ -137,7 +123,7 @@ const BookingForm = ({ tour }) => {
               id="price"
               label="Price"
               name="price"
-              defaultValue={tour.price}
+              defaultValue={tour?.price}
               disabled
               autoFocus
             />
