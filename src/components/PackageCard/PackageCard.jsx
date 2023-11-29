@@ -9,9 +9,40 @@ import {
 import PropTypes from "prop-types";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Link } from "react-router-dom";
+import { useAuth, useAxiosSecure } from "../../hooks";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const PackageCard = ({ tour }) => {
   const { _id, thumbnail, name, category, price } = tour;
+
+  const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
+
+  const handleAddToWishlist = () => {
+    if (user) {
+      const item = {
+        name,
+        thumbnail,
+        price,
+        email: user.email,
+      };
+
+      axiosSecure.post("/wishlist/add", item).then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          toast.success(" Added to wishlist");
+        }
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Login to complete this operation",
+        footer: '<a href="#">Why do I have this issue?</a>',
+      });
+    }
+  };
 
   return (
     <Grid item>
@@ -44,8 +75,9 @@ const PackageCard = ({ tour }) => {
             sx={{ position: "absolute", right: "130px", bottom: 0 }}
             color="primary"
             title="Add to Wishlist"
+            onClick={handleAddToWishlist}
           >
-            <FavoriteIcon  fontSize="24px" />
+            <FavoriteIcon fontSize="24px" />
           </IconButton>
         </Box>
         <Typography

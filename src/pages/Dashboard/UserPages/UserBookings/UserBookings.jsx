@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Paper,
+  Stack,
   Table,
   TableBody,
   TableCell,
@@ -15,6 +16,7 @@ import { useAuth, useAxiosSecure } from "../../../../hooks";
 import { useQuery } from "@tanstack/react-query";
 import { Loader } from "../../../../components";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const UserBookings = () => {
   const { user } = useAuth();
@@ -265,13 +267,20 @@ const UserBookings = () => {
             alignItems={"center"}
             justifyContent={"center"}
             textAlign={"center"}
+            gap={10}
           >
             <Typography
               variant="h2"
               color={"red"}
             >
-              You Don{"'"}t Have any booking available
+              You Don{"'"}t have any Booking
             </Typography>
+            <Button
+              LinkComponent={Link}
+              to="/allPackages"
+            >
+              View Packages
+            </Button>
           </Stack>
         )}
       </Box>
