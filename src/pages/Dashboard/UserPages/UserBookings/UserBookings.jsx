@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Paper,
-  Stack,
   Table,
   TableBody,
   TableCell,
@@ -11,24 +10,26 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
+import { PageTitle } from "../../../../shared";
 import { useAuth, useAxiosSecure } from "../../../../hooks";
 import { useQuery } from "@tanstack/react-query";
-import Loader from "../../../../components/Loader/Loader";
-import { PageTitle } from "../../../../shared";
-import toast from "react-hot-toast";
+import { Loader } from "../../../../components";
+import Swal from "sweetalert2";
 
-const ManageBooking = () => {
-  const axiosSecure = useAxiosSecure();
+const UserBookings = () => {
   const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
 
   const {
     data: bookings,
     isLoading,
     refetch,
   } = useQuery({
-    queryKey: [user.email, "bookings"],
+    queryKey: [user.email, "userBookings"],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/guidesBooking?email=${user.email}`);
+      const res = await axiosSecure.get(
+        `/bookings/userBookings?email=${user.email}`
+      );
 
       return res.data;
     },
@@ -38,23 +39,35 @@ const ManageBooking = () => {
     return <Loader />;
   }
 
-  const handleChangeStatus = (status, id) => {
-    const updatedStatus = { status };
-
-    axiosSecure
-      .put(`/bookings/changeStatus/${id}`, updatedStatus)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.modifiedCount) {
-          toast.success("status updated");
-          refetch();
-        }
-      });
+  const handleCancelBooking = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, cancel it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/booking/cancelBooking/${id}`).then((res) => {
+          console.log(res.data);
+          if (res.data.deletedCount) {
+            refetch();
+            Swal.fire({
+              title: "Cancelled!",
+              text: "The booking has been cancelled.",
+              icon: "success",
+            });
+          }
+        });
+      }
+    });
   };
 
   return (
     <Box>
-      <PageTitle title={"Manage Your Bookings"} />
+      <PageTitle title={`${user.displayName}'s Bookings`} />
       <Box>
         {bookings.length ? (
           <TableContainer component={Paper}>
@@ -92,7 +105,7 @@ const ManageBooking = () => {
                     }}
                     align="center"
                   >
-                    Tourist Name
+                    Guide Name
                   </TableCell>
                   <TableCell
                     sx={{
@@ -113,6 +126,16 @@ const ManageBooking = () => {
                     align="center"
                   >
                     Tour Price
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textTransform: "capitalize",
+                      fontWeight: 900,
+                      fontSize: "16px",
+                    }}
+                    align="center"
+                  >
+                    Status
                   </TableCell>
 
                   <TableCell
@@ -165,6 +188,12 @@ const ManageBooking = () => {
                     >
                       {booking.price}
                     </TableCell>
+                    <TableCell
+                      sx={{ textTransform: "capitalize", fontWeight: 700 }}
+                      align="center"
+                    >
+                      {booking.status}
+                    </TableCell>
 
                     <TableCell
                       align="center"
@@ -175,9 +204,43 @@ const ManageBooking = () => {
                         gap: "20px",
                       }}
                     >
+                      {booking.status === "in review" && (
+                        <Button
+                          variant="contained"
+                          color="error"
+                          sx={{
+                            textTransform: "capitalize",
+                            ":active": {
+                              transform: "scale(.95)",
+                            },
+                            fontWeight: 800,
+                          }}
+                          size="small"
+                          onClick={() => handleCancelBooking(booking._id)}
+                        >
+                          Cancel
+                        </Button>
+                      )}
+                      {booking.status === "accepted" && (
+                        <Button
+                          variant="contained"
+                          color="success"
+                          sx={{
+                            textTransform: "capitalize",
+                            ":active": {
+                              transform: "scale(.95)",
+                            },
+                            fontWeight: 800,
+                          }}
+                          size="small"
+                        >
+                          Pay
+                        </Button>
+                      )}
+
                       <Button
                         variant="contained"
-                        color="success"
+                        color="secondary"
                         sx={{
                           textTransform: "capitalize",
                           ":active": {
@@ -186,28 +249,9 @@ const ManageBooking = () => {
                           fontWeight: 800,
                         }}
                         size="small"
-                        onClick={() =>
-                          handleChangeStatus("accepted", booking._id)
-                        }
+                        disabled
                       >
-                        Accept
-                      </Button>
-                      <Button
-                        variant="contained"
-                        color="error"
-                        sx={{
-                          textTransform: "capitalize",
-                          ":active": {
-                            transform: "scale(.95)",
-                          },
-                          fontWeight: 800,
-                        }}
-                        size="small"
-                        onClick={() =>
-                          handleChangeStatus("rejected", booking._id)
-                        }
-                      >
-                        Reject
+                        Apply
                       </Button>
                     </TableCell>
                   </TableRow>
@@ -235,4 +279,4 @@ const ManageBooking = () => {
   );
 };
 
-export default ManageBooking;
+export default UserBookings;
