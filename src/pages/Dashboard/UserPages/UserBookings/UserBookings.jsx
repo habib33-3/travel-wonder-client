@@ -17,10 +17,14 @@ import { useQuery } from "@tanstack/react-query";
 import { Loader } from "../../../../components";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 
 const UserBookings = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
+  const [eligible, setEligible] = useState(false);
+
 
   const {
     data: bookings,
@@ -37,9 +41,25 @@ const UserBookings = () => {
     },
   });
 
+  useEffect(() => {
+    if (bookings?.length >= 3) {
+      Swal.fire({
+        title: "Congrats!",
+        text: "You got 10% discount.click apply button to get it",
+        icon: "success",
+      });
+      setEligible(true);
+    }
+  }, [bookings]);
+
   if (isLoading) {
     return <Loader />;
   }
+
+  // if (bookings?.length >= 3) {
+  //   toast.success("c")
+  //   setEligible(true)
+  // }
 
   const handleCancelBooking = (id) => {
     Swal.fire({
@@ -251,7 +271,7 @@ const UserBookings = () => {
                           fontWeight: 800,
                         }}
                         size="small"
-                        disabled
+                        disabled={!eligible}
                       >
                         Apply
                       </Button>
