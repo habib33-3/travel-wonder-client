@@ -7,9 +7,10 @@ import {
   Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const StoryCard = ({ blog }) => {
-  const { storyText, storyTitle, thumbnail, writerImg, writerName } = blog;
+  const { _id, storyText, storyTitle, thumbnail, writerImg, writerName } = blog;
 
   return (
     <Container width="xs">
@@ -67,6 +68,8 @@ const StoryCard = ({ blog }) => {
             {storyText.slice(0, 300)}...
           </Typography>
           <Button
+            LinkComponent={Link}
+            to={`/blog/${_id}`}
             variant="contained"
             color="info"
             sx={{
