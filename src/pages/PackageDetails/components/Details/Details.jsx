@@ -8,7 +8,7 @@ import PhotoAlbum from "react-photo-album";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 
 const Details = ({ tour }) => {
-  const { images, category, price, activities } = tour;
+  const { images, category, price, activities, description } = tour;
 
   const photos = [
     {
@@ -61,10 +61,7 @@ const Details = ({ tour }) => {
             variant="body1"
             sx={{ textAlign: "justified", mt: 1 }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
-            aliquam.lorem20 Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Rem obcaecati, aliquid officiis numquam nemo quos iusto unde
-            ex voluptatibus eveniet.
+            {description}
           </Typography>
 
           <Typography

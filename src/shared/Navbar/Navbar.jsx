@@ -116,7 +116,13 @@ const Navbar = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Box
+            component={"img"}
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            height={"20px"}
+            width={"20px"}
+            src="https://i.ibb.co/8YRqnM1/Color-logo-with-background.png"
+          />
           <Typography
             variant="h6"
             noWrap
@@ -201,7 +207,13 @@ const Navbar = () => {
               </MenuItem>
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <Box
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            height={"20px"}
+            width={"20px"}
+            component={"img"}
+            src="https://i.ibb.co/8YRqnM1/Color-logo-with-background.png"
+          />
           <Typography
             variant="h5"
             noWrap
