@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useAuth } from "..";
-import { useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export const axiosSecure = axios.create({
@@ -10,7 +10,7 @@ export const axiosSecure = axios.create({
 
 const useAxiosSecure = () => {
   const { logOut } = useAuth();
-  const navigate = useNavigation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axiosSecure.interceptors.response.use(

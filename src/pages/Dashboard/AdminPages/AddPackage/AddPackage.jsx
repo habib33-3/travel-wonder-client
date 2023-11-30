@@ -62,6 +62,7 @@ const AddPackage = () => {
       console.log(res.data);
       if (res.data.insertedId) {
         toast.success("Package Added");
+        e.target.reset()
       }
     });
   };

@@ -31,13 +31,10 @@ const StoryForm = ({ user }) => {
       publishedDate: new Date().toLocaleDateString("en-UK"),
     };
 
-    console.log(story);
-
     axiosSecure.post("/blog/addBlog", story).then((res) => {
-      console.log(res.data);
-
       if (res.data.insertedId) {
         toast.success("Story Submitted!");
+        e.target.reset();
       }
     });
   };

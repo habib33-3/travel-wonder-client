@@ -12,25 +12,17 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, NavLink } from "react-router-dom";
-import { useAdmin, useAuth, useGuide } from "../../hooks";
+import { useAuth } from "../../hooks";
 import { Logout } from "@mui/icons-material";
 import toast from "react-hot-toast";
-import Loader from "../../components/Loader/Loader";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
-  const { isAdmin, isLoading: adminLoading } = useAdmin();
-  const { isGuide, isLoading } = useGuide();
 
   const { user, logOut } = useAuth();
-
-  if (adminLoading || isLoading) {
-    return <Loader />;
-  }
 
   const handleOpenNavMenu = (e) => {
     setAnchorElNav(e.currentTarget);
@@ -274,14 +266,7 @@ const Navbar = () => {
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Button
                       LinkComponent={Link}
-                      // to="/dashboard"
-                      to={`/dashboard/${
-                        isAdmin
-                          ? "adminProfile"
-                          : isGuide
-                          ? "guideProfile"
-                          : "userProfile"
-                      }`}
+                      to="/dashboard"
                       variant="contained"
                     >
                       Dashboard

@@ -46,12 +46,11 @@ const BookingForm = ({ tour }) => {
       status: "in review",
     };
 
-    console.log(booking);
-
     axiosSecure.post("/booking/addBooking", booking).then((res) => {
       console.log(res.data);
       if (res.data.insertedId) {
         handleOpen();
+        e.target.reset();
       }
     });
   };
@@ -212,7 +211,7 @@ const BookingForm = ({ tour }) => {
               id="modal-modal-description"
               sx={{ mt: 2 }}
               LinkComponent={Link}
-              to="/"
+              to="/dashboard/usersBookings"
             >
               Your Bookings
             </Button>
