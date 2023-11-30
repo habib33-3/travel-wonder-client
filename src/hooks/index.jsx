@@ -7,6 +7,7 @@ import useCategories from "./useCategories/useCategories";
 import useTours from "./useTours/useTours";
 import useGuide from "./useGuide/useGuide";
 import useGuideData from "./useGuideData/useGuideData";
+import useBlogs from "./useBlogs/useBlogs";
 
 export {
   useAxiosPublic,
@@ -18,4 +19,5 @@ export {
   useTours,
   useGuide,
   useGuideData,
+  useBlogs,
 };

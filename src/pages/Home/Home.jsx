@@ -1,4 +1,4 @@
-import { Banner, TourType, TourismSection } from "./components";
+import { Banner, StorySection, TourType, TourismSection } from "./components";
 
 const Home = () => {
   return (
@@ -6,6 +6,7 @@ const Home = () => {
       <Banner />
       <TourismSection />
       <TourType />
+      <StorySection />
     </>
   );
 };
