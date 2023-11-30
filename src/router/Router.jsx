@@ -27,6 +27,9 @@ import {
 } from "../pages/Dashboard/UserPages";
 import Blogs from "../pages/Blogs/Blogs";
 import Blog from "../pages/Blog/Blog";
+import AboutUs from "../pages/AboutUs/AboutUs";
+import ContactUs from "../pages/ContactUs/ContactUs";
+import Community from "../pages/Community/Community";
 
 const router = createBrowserRouter([
   {
@@ -70,13 +73,28 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/blogs",
+        path: "blogs",
         element: <Blogs />,
       },
 
       {
-        path: "/blog/:id",
+        path: "blog/:id",
         element: <Blog />,
+      },
+
+      {
+        path: "about",
+        element: <AboutUs />,
+      },
+
+      {
+        path: "contact",
+        element: <ContactUs />,
+      },
+
+      {
+        path: "community",
+        element: <Community />,
       },
     ],
   },
