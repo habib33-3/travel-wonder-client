@@ -25,6 +25,7 @@ import {
   UserProfile,
   UserWishlist,
 } from "../pages/Dashboard/UserPages";
+import Blogs from "../pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,11 @@ const router = createBrowserRouter([
       {
         path: "guide/:id",
         element: <GuideDetails />,
+      },
+
+      {
+        path: "/blogs",
+        element: <Blogs />,
       },
     ],
   },

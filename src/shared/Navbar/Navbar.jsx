@@ -70,7 +70,7 @@ const Navbar = () => {
       </Button>
       <Button
         LinkComponent={NavLink}
-        to="/blog"
+        to="/blogs"
         onClick={handleCloseNavMenu}
         sx={{ my: 2, color: "white", display: "block" }}
         variant="contained"
@@ -174,7 +174,7 @@ const Navbar = () => {
               <MenuItem
                 onClick={handleCloseNavMenu}
                 LinkComponent={NavLink}
-                to="/blog"
+                to="/blogs"
               >
                 <Typography textAlign="center">Blog</Typography>
               </MenuItem>
