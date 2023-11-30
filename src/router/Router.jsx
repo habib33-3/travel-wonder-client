@@ -20,7 +20,11 @@ import {
 } from "../pages/Dashboard/AdminPages";
 import GuideRouter from "./GuideRouter";
 import { GuideProfile, ManageBooking } from "../pages/Dashboard/GuidePages";
-import { UserBookings, UserWishlist } from "../pages/Dashboard/UserPages";
+import {
+  UserBookings,
+  UserProfile,
+  UserWishlist,
+} from "../pages/Dashboard/UserPages";
 
 const router = createBrowserRouter([
   {
@@ -129,6 +133,11 @@ const router = createBrowserRouter([
       {
         path: "usersWishList",
         element: <UserWishlist />,
+      },
+
+      {
+        path: "userProfile",
+        element: <UserProfile />,
       },
     ],
   },
