@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useAuth } from "..";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import useAuth from "../useAuth/useAuth";
 
 export const axiosSecure = axios.create({
   baseURL: import.meta.env.VITE_DB_URL,

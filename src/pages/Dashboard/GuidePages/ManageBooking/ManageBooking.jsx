@@ -11,11 +11,12 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { useAuth, useAxiosSecure } from "../../../../hooks";
+import toast from "react-hot-toast";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure/useAxiosSecure";
+import useAuth from "../../../../hooks/useAuth/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../../../../components/Loader/Loader";
-import { PageTitle } from "../../../../shared";
-import toast from "react-hot-toast";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
 
 const ManageBooking = () => {
   const axiosSecure = useAxiosSecure();

@@ -11,20 +11,19 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { PageTitle } from "../../../../shared";
-import { useAuth, useAxiosSecure } from "../../../../hooks";
-import { useQuery } from "@tanstack/react-query";
-import { Loader } from "../../../../components";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import useAuth from "../../../../hooks/useAuth/useAuth";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
+import Loader from "../../../../components/Loader/Loader";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
 
 const UserBookings = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const [eligible, setEligible] = useState(false);
-
 
   const {
     data: bookings,

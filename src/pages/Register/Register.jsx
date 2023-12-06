@@ -8,16 +8,20 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import { Link as RouterLink, useNavigate, useNavigation } from "react-router-dom";
+import {
+  Link as RouterLink,
+  useNavigate,
+  useNavigation,
+} from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { GoogleLogin } from "../../components";
-import { useAuth, useAxiosPublic } from "../../hooks";
-import { PageTitle } from "../../shared";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import { uploadImg } from "../../util";
+import useAuth from "../../hooks/useAuth/useAuth";
+import useAxiosPublic from "../../hooks/useAxiosPublic/useAxiosPublic";
+import PageTitle from "../../shared/PageTitle/PageTitle";
+import GoogleLogin from "../../components/GoogleLogin/GoogleLogin";
 
 const Register = () => {
   const [visible, setVisible] = useState(false);

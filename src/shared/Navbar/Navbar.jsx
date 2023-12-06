@@ -14,9 +14,9 @@ import {
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, NavLink } from "react-router-dom";
-import { useAuth } from "../../hooks";
 import { Logout } from "@mui/icons-material";
 import toast from "react-hot-toast";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -57,16 +57,7 @@ const Navbar = () => {
       >
         Home
       </Button>
-      <Button
-        LinkComponent={NavLink}
-        to="/community"
-        onClick={handleCloseNavMenu}
-        sx={{ my: 2, color: "white", display: "block" }}
-        variant="contained"
-        color="info"
-      >
-        Community
-      </Button>
+
       <Button
         LinkComponent={NavLink}
         to="/blog"
@@ -76,26 +67,6 @@ const Navbar = () => {
         color="info"
       >
         Blogs
-      </Button>
-      <Button
-        LinkComponent={NavLink}
-        to="/about"
-        onClick={handleCloseNavMenu}
-        sx={{ my: 2, color: "white", display: "block" }}
-        variant="contained"
-        color="info"
-      >
-        About Us
-      </Button>
-      <Button
-        LinkComponent={NavLink}
-        to="/contact"
-        onClick={handleCloseNavMenu}
-        sx={{ my: 2, color: "white", display: "block" }}
-        variant="contained"
-        color="info"
-      >
-        Contact Us
       </Button>
     </>
   );
@@ -169,33 +140,13 @@ const Navbar = () => {
               >
                 <Typography textAlign="center">Home</Typography>
               </MenuItem>
-              <MenuItem
-                onClick={handleCloseNavMenu}
-                LinkComponent={NavLink}
-                to="/community"
-              >
-                <Typography textAlign="center">Community</Typography>
-              </MenuItem>
+
               <MenuItem
                 onClick={handleCloseNavMenu}
                 LinkComponent={NavLink}
                 to="/blogs"
               >
                 <Typography textAlign="center">Blog</Typography>
-              </MenuItem>
-              <MenuItem
-                onClick={handleCloseNavMenu}
-                LinkComponent={NavLink}
-                to="/about"
-              >
-                <Typography textAlign="center">About Us</Typography>
-              </MenuItem>
-              <MenuItem
-                onClick={handleCloseNavMenu}
-                LinkComponent={NavLink}
-                to="/contact"
-              >
-                <Typography textAlign="center">Contact Us</Typography>
               </MenuItem>
             </Menu>
           </Box>
@@ -234,7 +185,7 @@ const Navbar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            {user?.email ? (
+            {user.email ? (
               <>
                 <Tooltip title="Open User settings">
                   <IconButton

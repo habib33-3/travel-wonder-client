@@ -1,8 +1,10 @@
 import { Box, Container, CssBaseline, Grid } from "@mui/material";
 import PageTitle from "../../shared/PageTitle/PageTitle";
 import { useParams } from "react-router-dom";
-import { useCategories, useTours } from "../../hooks";
-import { Loader, PackageCard } from "../../components";
+import useTours from "../../hooks/useTours/useTours";
+import useCategories from "../../hooks/useCategories/useCategories";
+import Loader from "../../components/Loader/Loader";
+import PackageCard from "../../components/PackageCard/PackageCard";
 
 const PackageCategory = () => {
   const { categoryId } = useParams();

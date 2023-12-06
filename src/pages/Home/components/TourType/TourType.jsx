@@ -1,9 +1,9 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { PageTitle } from "../../../../shared";
+import useCategories from "../../../../hooks/useCategories/useCategories";
+import Loader from "../../../../components/Loader/Loader";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { useCategories } from "../../../../hooks";
-import { Loader } from "../../../../components";
 import { Link } from "react-router-dom";
 
 const TourType = () => {

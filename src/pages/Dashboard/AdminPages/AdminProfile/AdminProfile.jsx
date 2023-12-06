@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { useAuth } from "../../../../hooks";
-import { PageTitle } from "../../../../shared";
+import useAuth from "../../../../hooks/useAuth/useAuth";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
 
 const AdminProfile = () => {
   const { user } = useAuth();

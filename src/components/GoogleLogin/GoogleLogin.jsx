@@ -2,8 +2,8 @@ import { Box, Button, Typography } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
-import { useAxiosPublic } from "../../hooks";
 import { useNavigate } from "react-router-dom";
+import useAxiosPublic from "../../hooks/useAxiosPublic/useAxiosPublic";
 
 const GoogleLogin = () => {
   const { googleLogin } = useAuth();

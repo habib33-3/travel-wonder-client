@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { useAxiosSecure } from "../../../../../hooks";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../../../../../hooks/useAxiosSecure/useAxiosSecure";
 
 const StoryForm = ({ user }) => {
   const [storyTitle, setStoryTitle] = useState("");

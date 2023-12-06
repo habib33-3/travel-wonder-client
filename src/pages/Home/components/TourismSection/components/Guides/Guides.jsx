@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { useGuideData } from "../../../../../../hooks";
-import { Loader } from "../../../../../../components";
 import GuideCard from "./GuideCard";
+import Loader from "../../../../../../components/Loader/Loader";
+import useGuideData from "../../../../../../hooks/useGuideData/useGuideData";
 
 const Guides = () => {
   const { guides, isLoading } = useGuideData();

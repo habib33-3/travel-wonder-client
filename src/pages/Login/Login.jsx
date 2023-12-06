@@ -12,9 +12,9 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { GoogleLogin } from "../../components";
-import { useAuth } from "../../hooks";
-import { PageTitle } from "../../shared";
+import useAuth from "../../hooks/useAuth/useAuth";
+import PageTitle from "../../shared/PageTitle/PageTitle";
+import GoogleLogin from "../../components/GoogleLogin/GoogleLogin";
 
 const Login = () => {
   const [visible, setVisible] = useState(false);
@@ -23,7 +23,7 @@ const Login = () => {
 
   const { logIn } = useAuth();
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         toast.success("You are logged in");
-        navigate("/")
+        navigate("/");
       })
       .catch((err) => {
         toast.error(err.message);

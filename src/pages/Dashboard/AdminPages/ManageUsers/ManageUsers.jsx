@@ -9,10 +9,11 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { useAxiosSecure, useUsers } from "../../../../hooks";
-import { PageTitle } from "../../../../shared";
-import { Loader } from "../../../../components";
 import toast from "react-hot-toast";
+import useUsers from "../../../../hooks/UseUsers/useUsers";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure/useAxiosSecure";
+import Loader from "../../../../components/Loader/Loader";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
 
 const ManageUsers = () => {
   const { users, isLoading, refetch } = useUsers();

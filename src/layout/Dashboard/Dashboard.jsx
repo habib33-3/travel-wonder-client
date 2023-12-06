@@ -14,8 +14,12 @@ import {
 } from "@mui/material";
 import { Link, Outlet } from "react-router-dom";
 import { Home } from "@mui/icons-material";
-import { AdminDrawer, GuideDrawer, UserDrawer } from "./Drawers";
-import { useAdmin, useAuth, useGuide } from "../../hooks";
+import useAuth from "../../hooks/useAuth/useAuth";
+import useAdmin from "../../hooks/useAdmin/useAdmin";
+import useGuide from "../../hooks/useGuide/useGuide";
+import AdminDrawer from "./Drawers/AdminDrawer/AdminDrawer";
+import GuideDrawer from "./Drawers/GuideDrawer/GuideDrawer";
+import UserDrawer from "./Drawers/UserDrawer/UserDrawer";
 
 const Dashboard = () => {
   const drawerWidth = 240;
