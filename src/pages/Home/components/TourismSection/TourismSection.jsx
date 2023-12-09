@@ -1,7 +1,9 @@
 import { Box } from "@mui/material";
-import { PageTitle } from "../../../../shared";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import { Guides, Overview, ViewPackages } from "./components";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
+import Overview from "./components/Overview/Overview";
+import ViewPackages from "./components/ViewPackages/ViewPackages";
+import Guides from "./components/Guides/Guides";
 
 const TourismSection = () => {
   return (

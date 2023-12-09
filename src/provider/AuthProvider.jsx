@@ -11,7 +11,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../config/firebase.config";
-import { useAxiosPublic } from "../hooks";
+import useAxiosPublic from "../hooks/useAxiosPublic/useAxiosPublic";
 
 const googleProvider = new GoogleAuthProvider();
 

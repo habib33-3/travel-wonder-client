@@ -1,35 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
-import {
-  AllPackages,
-  ErrorPage,
-  GuideDetails,
-  Home,
-  Login,
-  PackageCategory,
-  PackageDetails,
-  Register,
-} from "../pages";
-import Dashboard from "../layout/Dashboard/Dashboard";
-import PrivateRouter from "./PrivateRouter";
-import AdminRouter from "./AdminRouter";
-import {
-  AddPackage,
-  AdminProfile,
-  ManageUsers,
-} from "../pages/Dashboard/AdminPages";
-import GuideRouter from "./GuideRouter";
-import { GuideProfile, ManageBooking } from "../pages/Dashboard/GuidePages";
-import {
-  UserBookings,
-  UserProfile,
-  UserWishlist,
-} from "../pages/Dashboard/UserPages";
+import ErrorPage from "../pages/Error/ErrorPage";
+import Home from "../pages/Home/Home";
+import Register from "../pages/Register/Register";
+import Login from "../pages/Login/Login";
+import AllPackages from "../pages/AllPackages/AllPackages";
+import PackageCategory from "../pages/PackageCategory/PackageCategory";
+import PackageDetails from "../pages/PackageDetails/PackageDetails";
+import GuideDetails from "../pages/GuideDetails/GuideDetails";
 import Blogs from "../pages/Blogs/Blogs";
 import Blog from "../pages/Blog/Blog";
-import AboutUs from "../pages/AboutUs/AboutUs";
-import ContactUs from "../pages/ContactUs/ContactUs";
-import Community from "../pages/Community/Community";
+import PrivateRouter from "./PrivateRouter";
+import Dashboard from "../layout/Dashboard/Dashboard";
+import AdminRouter from "./AdminRouter";
+import ManageUsers from "../pages/Dashboard/AdminPages/ManageUsers/ManageUsers";
+import AddPackage from "../pages/Dashboard/AdminPages/AddPackage/AddPackage";
+import AdminProfile from "../pages/Dashboard/AdminPages/AdminProfile/AdminProfile";
+import GuideRouter from "./GuideRouter";
+import GuideProfile from "../pages/Dashboard/GuidePages/GuideProfile/GuideProfile";
+import ManageBooking from "../pages/Dashboard/GuidePages/ManageBooking/ManageBooking";
+import UserBookings from "../pages/Dashboard/UserPages/UserBookings/UserBookings";
+import UserWishlist from "../pages/Dashboard/UserPages/UserWishlist/UserWishlist";
+import UserProfile from "../pages/Dashboard/UserPages/UserProfile/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -80,21 +72,6 @@ const router = createBrowserRouter([
       {
         path: "blog/:id",
         element: <Blog />,
-      },
-
-      {
-        path: "about",
-        element: <AboutUs />,
-      },
-
-      {
-        path: "contact",
-        element: <ContactUs />,
-      },
-
-      {
-        path: "community",
-        element: <Community />,
       },
     ],
   },

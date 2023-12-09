@@ -11,12 +11,13 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { PageTitle } from "../../../../shared";
-import { useAuth, useAxiosSecure } from "../../../../hooks";
-import { useQuery } from "@tanstack/react-query";
-import { Loader } from "../../../../components";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../../../../hooks/useAuth/useAuth";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
+import Loader from "../../../../components/Loader/Loader";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
 
 const UserWishlist = () => {
   const { user } = useAuth();

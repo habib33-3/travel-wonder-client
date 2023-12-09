@@ -1,8 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { useGuideData } from "../../../../hooks";
-import { Loader } from "../../../../components";
-
 import { Link } from "react-router-dom";
+import useGuideData from "../../../../hooks/useGuideData/useGuideData";
+import Loader from "../../../../components/Loader/Loader";
 
 const AvailableGuides = () => {
   const { guides, isLoading } = useGuideData();

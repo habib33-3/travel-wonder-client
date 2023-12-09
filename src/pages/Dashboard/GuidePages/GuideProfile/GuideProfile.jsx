@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { useAuth } from "../../../../hooks";
-import { PageTitle } from "../../../../shared";
 import UpdateForm from "./UpdateForm/UpdateForm";
+import useAuth from "../../../../hooks/useAuth/useAuth";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
 
 const GuideProfile = () => {
   const { user } = useAuth();

@@ -9,9 +9,10 @@ import {
 import PropTypes from "prop-types";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Link } from "react-router-dom";
-import { useAuth, useAxiosSecure } from "../../hooks";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import useAuth from "../../hooks/useAuth/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure/useAxiosSecure";
 
 const PackageCard = ({ tour }) => {
   const { _id, thumbnail, name, category, price } = tour;

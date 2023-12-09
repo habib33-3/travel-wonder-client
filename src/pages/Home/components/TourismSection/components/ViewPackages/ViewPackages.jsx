@@ -1,7 +1,8 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
-import { useTours } from "../../../../../../hooks";
-import { Loader, PackageCard } from "../../../../../../components";
 import { Link } from "react-router-dom";
+import useTours from "../../../../../../hooks/useTours/useTours";
+import Loader from "../../../../../../components/Loader/Loader";
+import PackageCard from "../../../../../../components/PackageCard/PackageCard";
 
 const ViewPackages = () => {
   const { tours, isLoading } = useTours();

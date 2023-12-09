@@ -1,7 +1,9 @@
 import { Box, Container, CssBaseline, Grid } from "@mui/material";
-import { useTours } from "../../hooks";
-import { PageTitle } from "../../shared";
-import { Loader, PackageCard } from "../../components";
+import useTours from "../../hooks/useTours/useTours";
+import Loader from "../../components/Loader/Loader";
+import PageTitle from "../../shared/PageTitle/PageTitle";
+import PackageCard from "../../components/PackageCard/PackageCard";
+
 
 const AllPackages = () => {
   const { tours, isLoading } = useTours();

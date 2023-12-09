@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { Footer, Navbar } from "../shared";
-import { useAuth } from "../hooks";
-import { Loader } from "../components";
+import useAuth from "../hooks/useAuth/useAuth";
+import Loader from "../components/Loader/Loader";
+import Navbar from "../shared/Navbar/Navbar";
+import Footer from "../shared/Footer/Footer";
 
 const Root = () => {
   const { loading } = useAuth();

@@ -1,7 +1,8 @@
 import { Box, Button, Stack } from "@mui/material";
-import { PageTitle } from "../../../../shared";
-import { useBlogs } from "../../../../hooks";
-import { Loader, StoryCard } from "../../../../components";
+import useBlogs from "../../../../hooks/useBlogs/useBlogs";
+import Loader from "../../../../components/Loader/Loader";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
+import StoryCard from "../../../../components/StoryCard/StoryCard";
 import { Link } from "react-router-dom";
 
 const StorySection = () => {
@@ -28,10 +29,7 @@ const StorySection = () => {
           />
         ))}
       </Stack>
-      <Stack
-        alignItems={"center"}
-        just
-      >
+      <Stack alignItems={"center"}>
         <Button
           variant="contained"
           color="secondary"

@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
-import { useAdmin, useAuth } from "../hooks";
-import { Loader } from "../components";
 import { Navigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth/useAuth";
+import Loader from "../components/Loader/Loader";
+import useAdmin from "../hooks/useAdmin/useAdmin";
 
 const AdminRouter = ({ children }) => {
   const { user, loading } = useAuth();

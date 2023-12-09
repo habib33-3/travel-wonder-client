@@ -1,9 +1,9 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
-import { useGuideData } from "../../hooks";
-import { useParams } from "react-router-dom";
-import { PageTitle } from "../../shared";
-import { Loader } from "../../components";
 import ReviewForm from "./ReviewForm/ReviewForm";
+import { useParams } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
+import PageTitle from "../../shared/PageTitle/PageTitle";
+import useGuideData from "../../hooks/useGuideData/useGuideData";
 
 const GuideDetails = () => {
   const { id } = useParams();
@@ -89,7 +89,7 @@ const GuideDetails = () => {
             </Box>
           </Box>
         </Stack>
-        <ReviewForm guideEmail={email}/>
+        <ReviewForm guideEmail={email} />
       </Container>
     </Box>
   );

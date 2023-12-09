@@ -1,10 +1,11 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
-import { useAuth, useBlogs } from "../../hooks";
-import { Loader } from "../../components";
-import { useLocation, useParams } from "react-router-dom";
-import { PageTitle } from "../../shared";
 import { FacebookShareButton } from "react-share";
 import { FacebookOutlined } from "@mui/icons-material";
+import useBlogs from "../../hooks/useBlogs/useBlogs";
+import { useLocation, useParams } from "react-router-dom";
+import useAuth from "../../hooks/useAuth/useAuth";
+import Loader from "../../components/Loader/Loader";
+import PageTitle from "../../shared/PageTitle/PageTitle";
 
 const Blog = () => {
   const { blogs, isLoading } = useBlogs();

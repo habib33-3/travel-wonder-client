@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { PageTitle } from "../../../../shared";
-import { useAuth } from "../../../../hooks";
 import StoryForm from "./StoryForm/StoryForm";
+import useAuth from "../../../../hooks/useAuth/useAuth";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
 
 const UserProfile = () => {
   const { user } = useAuth();

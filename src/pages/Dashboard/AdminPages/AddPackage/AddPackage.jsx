@@ -11,11 +11,12 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { PageTitle } from "../../../../shared";
-import { useAxiosSecure, useCategories } from "../../../../hooks";
-import { Loader } from "../../../../components";
+import useCategories from "../../../../hooks/useCategories/useCategories";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure/useAxiosSecure";
 import { useState } from "react";
+import Loader from "../../../../components/Loader/Loader";
 import toast from "react-hot-toast";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
 
 const AddPackage = () => {
   const { categories, isLoading } = useCategories();
@@ -62,7 +63,7 @@ const AddPackage = () => {
       console.log(res.data);
       if (res.data.insertedId) {
         toast.success("Package Added");
-        e.target.reset()
+        e.target.reset();
       }
     });
   };

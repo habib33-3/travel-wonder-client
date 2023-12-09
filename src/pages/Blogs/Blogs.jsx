@@ -1,7 +1,9 @@
 import { Box, Stack } from "@mui/material";
-import { PageTitle } from "../../shared";
-import { Loader, StoryCard } from "../../components";
-import { useBlogs } from "../../hooks";
+import useBlogs from "../../hooks/useBlogs/useBlogs";
+import Loader from "../../components/Loader/Loader";
+import PageTitle from "../../shared/PageTitle/PageTitle";
+import StoryCard from "../../components/StoryCard/StoryCard";
+
 
 const Blogs = () => {
   const { blogs, isLoading } = useBlogs();
