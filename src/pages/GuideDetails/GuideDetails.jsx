@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import PageTitle from "../../shared/PageTitle/PageTitle";
 import useGuideData from "../../hooks/useGuideData/useGuideData";
+import Reviews from "./Reviews/Reviews";
 
 const GuideDetails = () => {
   const { id } = useParams();
@@ -89,6 +90,7 @@ const GuideDetails = () => {
             </Box>
           </Box>
         </Stack>
+        <Reviews guideEmail={email} />
         <ReviewForm guideEmail={email} />
       </Container>
     </Box>

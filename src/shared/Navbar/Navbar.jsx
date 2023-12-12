@@ -185,7 +185,7 @@ const Navbar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            {user.email ? (
+            {user?.email ? (
               <>
                 <Tooltip title="Open User settings">
                   <IconButton

@@ -30,11 +30,7 @@ const ReviewForm = ({ guideEmail }) => {
       userPic: user.photoURL,
     };
 
-    console.log(review);
-
     axiosSecure.post("/review/addReview", review).then((res) => {
-      console.log(res.data);
-
       if (res.data.insertedId) {
         toast.success("Review Submitted");
       }
