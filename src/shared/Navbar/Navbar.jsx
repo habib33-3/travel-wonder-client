@@ -77,6 +77,17 @@ const Navbar = () => {
       >
         Blogs
       </Button>
+
+      <Button
+        LinkComponent={NavLink}
+        to="/allPackages"
+        onClick={handleCloseNavMenu}
+        sx={{ my: 2, color: "white", display: "block" }}
+        variant="contained"
+        color="info"
+      >
+        Packages
+      </Button>
     </>
   );
 
@@ -156,6 +167,14 @@ const Navbar = () => {
                 to="/blogs"
               >
                 <Typography textAlign="center">Blog</Typography>
+              </MenuItem>
+
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                LinkComponent={NavLink}
+                to="/allPackages"
+              >
+                <Typography textAlign="center">Packages</Typography>
               </MenuItem>
             </Menu>
           </Box>

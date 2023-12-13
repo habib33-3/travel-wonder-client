@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import Loader from "../../../../components/Loader/Loader";
 import useTours from "../../../../hooks/useTours/useTours";
