@@ -1,8 +1,9 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import useTours from "../../../../../../hooks/useTours/useTours";
-import Loader from "../../../../../../components/Loader/Loader";
-import PackageCard from "../../../../../../components/PackageCard/PackageCard";
+import Loader from "../../../../components/Loader/Loader";
+import useTours from "../../../../hooks/useTours/useTours";
+import PackageCard from "../../../../components/PackageCard/PackageCard";
+import PageTitle from "../../../../shared/PageTitle/PageTitle";
 
 const ViewPackages = () => {
   const { tours, isLoading } = useTours();
@@ -12,13 +13,8 @@ const ViewPackages = () => {
   }
 
   return (
-    <Box>
-      <Typography
-        textAlign={"center"}
-        variant="h4"
-      >
-        Our Packages
-      </Typography>
+    <Box sx={{ mt: 10 }}>
+      <PageTitle title={" Our Packages"} />
 
       <Box sx={{ mt: 5 }}>
         <Grid
