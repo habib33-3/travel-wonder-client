@@ -17,12 +17,21 @@ import { Link, NavLink } from "react-router-dom";
 import { Logout } from "@mui/icons-material";
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth/useAuth";
+import useAdmin from "../../hooks/useAdmin/useAdmin";
+import useGuide from "../../hooks/useGuide/useGuide";
+import Loader from "../../components/Loader/Loader";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
   const { user, logOut } = useAuth();
+  const { isAdmin, isLoading: adminLoading } = useAdmin();
+  const { isGuide, isLoading } = useGuide();
+
+  if (adminLoading || isLoading) {
+    return <Loader />;
+  }
 
   const handleOpenNavMenu = (e) => {
     setAnchorElNav(e.currentTarget);
@@ -214,15 +223,24 @@ const Navbar = () => {
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
-                  <MenuItem onClick={handleCloseUserMenu}>
-                    <Button
-                      LinkComponent={Link}
-                      to="/dashboard"
-                      variant="contained"
-                    >
-                      Dashboard
-                    </Button>
-                  </MenuItem>
+                  {user && (
+                    <MenuItem onClick={handleCloseUserMenu}>
+                      <Button
+                        LinkComponent={Link}
+                        // to="/dashboard"
+                        to={`/dashboard/${
+                          isAdmin
+                            ? "adminProfile"
+                            : isGuide
+                            ? "guideProfile"
+                            : "userProfile"
+                        }`}
+                        variant="contained"
+                      >
+                        Dashboard
+                      </Button>
+                    </MenuItem>
+                  )}
                   <MenuItem>
                     <Typography textAlign="center">
                       Name: {user.displayName}

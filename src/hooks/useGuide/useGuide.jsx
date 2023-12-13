@@ -9,9 +9,13 @@ const useGuide = () => {
   const { data: isGuide, isLoading } = useQuery({
     queryKey: [user?.email, "isGuide"],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/checkGuide/${user?.email}`);
+      if (user) {
+        const res = await axiosSecure.get(`/checkGuide/${user?.email}`);
 
-      return res.data.guide;
+        return res.data.guide;
+      } else {
+        return null;
+      }
     },
   });
 

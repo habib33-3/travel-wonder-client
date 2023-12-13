@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext, useEffect, useMemo } from "react";
 export const AuthContext = createContext(null);
 import {
   GoogleAuthProvider,
@@ -73,15 +73,28 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const authInfo = {
-    loading,
-    user,
-    createUser,
-    logIn,
-    updateUserProfile,
-    googleLogin,
-    logOut,
-  };
+  // const authInfo1 = {
+  //   loading,
+  //   user,
+  //   createUser,
+  //   logIn,
+  //   updateUserProfile,
+  //   googleLogin,
+  //   logOut,
+  // };
+
+  const authInfo = useMemo(
+    () => ({
+      loading,
+      user,
+      createUser,
+      logIn,
+      updateUserProfile,
+      googleLogin,
+      logOut,
+    }),
+    [loading, user]
+  );
 
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
