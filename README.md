@@ -1,9 +1,3 @@
----
-runme:
-  id: 01HH7AZ5VXKHXNYKG38G2SG7VH
-  version: v2.0
----
-
 # TravelWonder Platform
 
 Welcome to TravelWonder, your ultimate destination for seamless travel experiences! Whether you're a passionate traveler looking to explore diverse packages or a storyteller eager to share your adventures, our platform has you covered.
@@ -13,7 +7,11 @@ Welcome to TravelWonder, your ultimate destination for seamless travel experienc
 * Database: Mongodb
 * Authentication: Firebase and JWT
 
-### [server side code](https://github.com/habib33-3/travel-wonder-server){:target="_blank"}
+## [server side code](https://github.com/habib33-3/travel-wonder-server)
+
+### Admin Email: <admin@admin.com>
+
+### Admin Password: adminadmin
 
 ## Features
 
