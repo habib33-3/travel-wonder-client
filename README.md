@@ -1,8 +1,8 @@
 # TravelWonder Platform
 
-Welcome to TravelWonder, your ultimate destination for seamless travel experiences! Whether you're a passionate traveler looking to explore diverse packages or a storyteller eager to share your adventures, our platform has you covered.
+Welcome to TravelWonder, your ultimate destination for seamless travel experiences! Whether you're a passionate traveler looking to explore diverse packages or a storyteller eager to share your adventures, our platform covers you.
 
-* Frontend: React,Material UI
+* Frontend: React, Material UI
 * Backend: Express js
 * Database: Mongodb
 * Authentication: Firebase and JWT
