@@ -1,34 +1,36 @@
-# TravelWonder Platform
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Welcome to TravelWonder, your ultimate destination for seamless travel experiences! Whether you're a passionate traveler looking to explore diverse packages or a storyteller eager to share your adventures, our platform covers you.
+## Getting Started
 
-- Frontend: React, Material UI
-- Backend: Express js
-- Database: Mongodb
-- Authentication: Firebase and JWT
+First, run the development server:
 
-## [server side code](https://github.com/habib33-3/travel-wonder-server)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-### Admin Email: <admin@admin.com>
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Admin Password: adminadmin
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Features
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### 1. Package Booking
+## Learn More
 
-User can browse and book from a variety of travel packages tailored to their preferences.
+To learn more about Next.js, take a look at the following resources:
 
-### 2. User Stories
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-User can share their travel tales and experiences with the community by contributing captivating user-generated stories.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### 3. Admin Capabilities
+## Deploy on Vercel
 
-Administrators can effortlessly manage the platform by adding new travel packages, handling user roles, and overseeing overall functionality.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### 4. Guide Assignment
-
-Assign trips to dedicated guides who have the flexibility to accept or reject based on their availability and expertise.
-
-Check out the live platform [TravelGuide](https://travel-wonder-client.vercel.app/).
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
