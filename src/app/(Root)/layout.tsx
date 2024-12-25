@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import ThemeProvider from "@/providers/theme-provider";
+
 import Navbar from "@/components/shared/Navbar/Navbar";
 
 const RootLayout = ({
@@ -8,10 +10,22 @@ const RootLayout = ({
   children: ReactNode;
 }>) => {
   return (
-    <main>
-      <Navbar />
-      {children}
-    </main>
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
+      <main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </main>
+    </html>
   );
 };
 

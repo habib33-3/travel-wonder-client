@@ -1,3 +1,5 @@
+import { ThemeToggle } from "@/components/ThemeToggle";
+
 import Logo from "../Logo/Logo";
 import NavMenu from "./NavMenu";
 
@@ -11,7 +13,11 @@ const Navbar = () => {
         <div className="">
           <NavMenu />
         </div>
-        <div className="">dashboard</div>
+        <div className="">
+          <div className="">
+            <ThemeToggle />
+          </div>
+        </div>
       </nav>
     </header>
   );
